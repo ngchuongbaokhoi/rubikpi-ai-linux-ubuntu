@@ -39,6 +39,13 @@
 		stdout-path = "serial0:115200n8";
 	};
 
+        vreg_3p3: vreg-3p3-regulator {
+                compatible = "regulator-fixed";
+                regulator-name = "vreg_3p3";
+                regulator-min-microvolt = <3300000>;
+                regulator-max-microvolt = <3300000>;
+        };
+
 	gpio-keys {
 		compatible = "gpio-keys";
 		label = "gpio-keys";
@@ -1715,10 +1722,27 @@
 
 &i2c1 {
 	status = "okay";
+
+	imu@68 {
+		compatible = "invensense,icm45686";
+		reg = <0x68>;
+
+		vdd-supply = <&vreg_3p3>;
+		vddio-supply = <&vreg_3p3>;
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <8 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "int1";
+	};
 };
 
 &tlmm {
-	/delete-property/ gpio-reserved-ranges;
+	imu_int1_default: imu-int1-default-state {
+		pins = "gpio8";
+		function = "gpio";
+		bias-pull-up;
+		input-enable;
+	};
 };
 
 &spi12 {
