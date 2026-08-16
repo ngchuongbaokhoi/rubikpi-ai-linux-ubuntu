@@ -846,6 +846,10 @@ CONFIG_INTERCONNECT_QCOM_SM8450                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_SM8550                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_SM8650                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_X1E80100               policy<{'arm64': 'y'}>
+CONFIG_INV_ICM45600                             policy<{'arm64': 'm'}>
+CONFIG_INV_ICM45600_I2C                         policy<{'arm64': 'm'}>
+CONFIG_INV_ICM45600_I3C                         policy<{'arm64': 'n'}>
+CONFIG_INV_ICM45600_SPI                         policy<{'arm64': 'n'}>
 CONFIG_IPMI_KCS_BMC                             policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_CDEV_IPMI                   policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_SERIO                       policy<{'arm64': '-'}>
