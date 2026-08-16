@@ -36,11 +36,17 @@ CONFIG_HZ_1000                                  note<'TODO: update note'>
 CONFIG_HZ_250                                   policy<{'arm64': 'n', 'arm64-qcom-rt': 'y'}>
 CONFIG_HZ_250                                   note<'TODO: update note'>
 
+CONFIG_IIO                                      policy<{'arm64': 'y'}>
+CONFIG_IIO                                      note<'built-in: dependency of INV_ICM45600 (ICM-45686 IMU)'>
+
 CONFIG_IKCONFIG                                 policy<{'arm64': 'y'}>
 CONFIG_IKCONFIG                                 note<'LP: #2126467'>
 
 CONFIG_IKCONFIG_PROC                            policy<{'arm64': 'y'}>
 CONFIG_IKCONFIG_PROC                            note<'LP: #2126467'>
+
+CONFIG_INV_ICM45600                             policy<{'arm64': 'y'}>
+CONFIG_INV_ICM45600                             note<'built-in for ICM-45686 IMU on RUBIK Pi 3; required at boot on QDL-flashed image'>
 
 CONFIG_IPMMU_VMSA                               policy<{'arm64': '-'}>
 CONFIG_IPMMU_VMSA                               note<'LP: #1718734'>
@@ -794,8 +800,11 @@ CONFIG_I2C_TEGRA_BPMP                           policy<{'arm64': '-'}>
 CONFIG_I2C_VERSATILE                            policy<{'arm64': '-'}>
 CONFIG_I2C_XGENE_SLIMPRO                        policy<{'arm64': '-'}>
 CONFIG_I2C_XLP9XX                               policy<{'arm64': '-'}>
+CONFIG_IIO_INV_SENSORS_TIMESTAMP                policy<{'arm64': 'y'}>
+CONFIG_IIO_KFIFO_BUF                            policy<{'arm64': 'y'}>
 CONFIG_IIO_STM32_LPTIMER_TRIGGER                policy<{'arm64': '-'}>
 CONFIG_IIO_STM32_TIMER_TRIGGER                  policy<{'arm64': '-'}>
+CONFIG_IIO_TRIGGERED_BUFFER                     policy<{'arm64': 'y'}>
 CONFIG_IMX2_WDT                                 policy<{'arm64': '-'}>
 CONFIG_IMX7D_ADC                                policy<{'arm64': '-'}>
 CONFIG_IMX7ULP_WDT                              policy<{'arm64': '-'}>
@@ -846,6 +855,9 @@ CONFIG_INTERCONNECT_QCOM_SM8450                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_SM8550                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_SM8650                 policy<{'arm64': 'y'}>
 CONFIG_INTERCONNECT_QCOM_X1E80100               policy<{'arm64': 'y'}>
+CONFIG_INV_ICM45600_I2C                         policy<{'arm64': 'y'}>
+CONFIG_INV_ICM45600_I3C                         policy<{'arm64': 'n'}>
+CONFIG_INV_ICM45600_SPI                         policy<{'arm64': 'n'}>
 CONFIG_IPMI_KCS_BMC                             policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_CDEV_IPMI                   policy<{'arm64': '-'}>
 CONFIG_IPMI_KCS_BMC_SERIO                       policy<{'arm64': '-'}>
